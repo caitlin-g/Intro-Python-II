@@ -7,3 +7,5 @@ class Player:
         self.current_room = current_room
         self.storage = []
 
+    def __repr__(self):
+        return f"{self.name} is in {self.current_room}"
