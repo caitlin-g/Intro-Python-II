@@ -71,5 +71,7 @@ while not directions == 'q':
 # based on the direction they input
     new_player.current_room = move_rooms(direction, new_player.current_room)
 
-
 # If the user enters "q", quit the game.
+    if direction == 'q':
+        print("Thanks for playing!")
+        break
