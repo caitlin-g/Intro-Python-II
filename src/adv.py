@@ -64,13 +64,12 @@ while not directions == 'q':
     print(new_player.current_room.description)
 
 # * Waits for user input and decides what to do.
-    direction = input("Where to next? [n] North    [e] East    [s]    South    [w]West    [q] Quit")
+    direction = input("Where to next? [n] North    [e] East    [s]    South    [w]West    [q] Quit\n")
 
 # If the user enters a cardinal direction, attempt to move to the room there.
 # Uses the move_rooms function to determine the player's n ew current room
 # based on the direction they input
-player.current_room = move_rooms(direction, player.current_room)
-
+    new_player.current_room = move_rooms(direction, new_player.current_room)
 
 
 # If the user enters "q", quit the game.
