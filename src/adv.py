@@ -1,5 +1,17 @@
 from room import Room
 from player import Player
+from item import Item
+
+# Nested lists of item names and ddescriptions
+item_descriptions = [
+    ['latern','light source'],
+    ['machete','Use for protection'],
+    ['gold','It\'s gold. Enough said']
+]
+
+items = [Item(item[0], item[1]) for item in item_descriptions]
+
+print(items)
 
 # Declare all the rooms
 
