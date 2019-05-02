@@ -8,3 +8,5 @@ class Room:
         self.description = description
         self.storage = []
         
+    def __repr__(self):
+        return f"{self.name}, {self.description}"
