@@ -40,29 +40,36 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 new_player = Player('Rupert', room['outside'])
-direction = input("[n] North    [e] East    [s]    South    [w]West    [q] Quit\n")
+print("Welcome, friend!")
+print(input("Which direction would you like to move?: [n] North    [e] East    [s]    South    [w]West    [q] Quit\n"))
+directions = ['n', 'e', 's', 'w', 'q']
+
+# Function that will return the current room if the player moves 
+# in an invalid direction
+
+def move_rooms(direction, current_room):
+    room_link = direction + '_to'
+# Checks to see if we can move in that direction
+    if hasattr(current_room, room_link):
+# If true, we get the new room
+        return getattr(current_room, room_link)
+    else:
+        print("Nothing that way! Try another direction")
+        return current_room
 
 # Write a loop that:
-while not direction == 'q':
+while not directions == 'q':
 # * Prints the current room name
-    def print_room_name(self):
-        print(self.name)
-
-    def __str__(self):
-        return str(self.__dict__)
-    
-    new_player.print_room_name()
+    print(new_player.current_room)
 # * Prints the current description (the textwrap module might be useful here).
-  
+    print(new_player.current_room.description)
 
 # * Waits for user input and decides what to do.
-    # if direction == 'n':
-    #     print
-
-
+    direction = input("Where to next? [n] North    [e] East    [s]    South    [w]West    [q] Quit")
 # If the user enters a cardinal direction, attempt to move to the room there.
 # Print an error message if the movement isn't allowed.
-#
+    # if direction in directions:
+
 
 
 # If the user enters "q", quit the game.
