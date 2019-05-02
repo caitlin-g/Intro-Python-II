@@ -46,7 +46,6 @@ directions = ['n', 'e', 's', 'w', 'q']
 
 # Function that will return the current room if the player moves 
 # in an invalid direction
-
 def move_rooms(direction, current_room):
     room_link = direction + '_to'
 # Checks to see if we can move in that direction
@@ -66,9 +65,11 @@ while not directions == 'q':
 
 # * Waits for user input and decides what to do.
     direction = input("Where to next? [n] North    [e] East    [s]    South    [w]West    [q] Quit")
+
 # If the user enters a cardinal direction, attempt to move to the room there.
-# Print an error message if the movement isn't allowed.
-    # if direction in directions:
+# Uses the move_rooms function to determine the player's n ew current room
+# based on the direction they input
+player.current_room = move_rooms(direction, player.current_room)
 
 
 
